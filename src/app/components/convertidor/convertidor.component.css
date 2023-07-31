@@ -1,0 +1,17 @@
+@media (max-width: 1000px) {
+    .container { width: 1000vw; }
+}
+
+.container {
+    width: 50vw;
+}
+
+.badge {
+    margin: 2px;
+    font-size: 150%;
+}
+
+label, #mensajeCabecera {
+    font-size: 150%;
+    color: #fff;
+}

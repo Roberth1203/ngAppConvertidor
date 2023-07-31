@@ -1,0 +1,34 @@
+<div class="container mt-3">
+    <div class="row mb-3 p-2">
+        <h5 id="mensajeCabecera" class="col-sm-10 text-center d-flex justify-content-center">Por favor, llene el formulaio con las cantidades y monedas a convertir.</h5>
+    </div>
+    <div class="row mb-3 p-2">
+        <label for="monto" class="col-sm-3 col-form-label">Cantidad:</label>
+        <div class="col-sm-7">
+            <input type="number" placeholder="Ingrese un número mayor a cero." id="monto" class="form-control form-control-lg" [(ngModel)]="cantidad" (keyup)="convertir();">
+        </div>
+    </div>
+    <div class="row mb-3 p-2">
+        <label for="monedaOrigen" class="col-sm-3 col-form-label">Mi moneda:</label>
+        <div class="col-sm-7">
+            <select name="" id="monedaOrigen" class="form-control form-control-lg" [(ngModel)]="origen">
+                <option *ngFor="let moneda of monedas">{{moneda}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3 p-2">
+        <label for="monedaDestino" class="col-sm-3 col-form-label">Convertir a:</label>
+        <div class="col-sm-7">
+            <select name="" id="monedaDestino" class="form-control form-control-lg" [(ngModel)]="destino">
+                <option *ngFor="let moneda of monedas">{{moneda}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3 p-2">
+        <h5 *ngIf="cantidad > 0" class="text-center">
+            <span class="badge bg-success">{{cantidad}} {{origen}}</span>
+            <span class="badge bg-secondary">SON</span>
+            <span class="badge bg-success">{{total | number: '0.0-2'}} {{destino}}</span>
+        </h5>
+    </div>
+</div>
